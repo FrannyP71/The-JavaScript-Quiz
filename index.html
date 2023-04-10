@@ -3,18 +3,28 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>JavaScript Quiz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' href='style.css '>
-    <script src='main.js'></script>
+    <link rel='stylesheet' href='style.css'>
+   
 </head>
 <body>
-    <div class="container">
-        <div id="home" class="flex-column flex-center"></div>
-            <h1>Are you Ready?</h1>
-            <a href="/game.html" class="btn">Play</a>
-            <a href="/highscores.html" id="highscore-btn" class="btn">HighScores</a>
-
+    <div class="start-page">
+        <button id="start-button">Start</button>
     </div>
+    <div id="display-container">
+        <div class="header"></div>
+            <h3 class="number-of-count"><span id="number-of-questions">0</span> of 10 questions</h3>
+        </div>
+        <h3 class="timer"><span id="time-left">60</span> seconds</h3>
+        <div id="container">
+            <!--the questions will be diplayed here-->
+        </div>
+        <div class="score">
+            <div id="user-score">Score</div>
+            <button id="restart">Restart</button>
+            </div>
+         
+        <script src='script.js'></script>
 </body>
 </html>
