@@ -68,7 +68,7 @@ function startCountdown(seconds) {
     let counter = seconds;
 
     const interval = setInterval(() => {
-        document.timeDisplay = counter
+        timeDisplay.textContent = counter
         console.log(counter);
         counter--;
 
@@ -98,5 +98,6 @@ function restart() {
 startButton.addEventListener("click", function(event) {
     console.log(event)
     questionEl.style.display= "block";
+    startCountdown(60);
     nextQuestion();
 })
