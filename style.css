@@ -15,8 +15,10 @@
         color:rgb(207, 96, 96)
     }
 
-    h2 {
-      color: rgb(86, 86, 244)
+    .title{
+      color: rgb(86, 86, 244);
+      font-size: 50 px;
+      align-items: center;
     }
 
     .start-page, .score-container {
@@ -89,6 +91,19 @@
         position: center;
         border-radius: 10px;
         
+    }
+
+    .response {
+        align-items: left;
+        color: blue;
+        background-color: aqua;
+        display: column;
+        justify-content: left;
+        border-radius: 5px;
+        font-size: 20px;
+        margin: 5px 5px 5px 5px;
+        height: 50px;
+        width: 100px;
     }
 
     .hide{

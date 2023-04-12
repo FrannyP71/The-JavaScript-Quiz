@@ -55,9 +55,6 @@ var questionArr=[
 
 function displayQuestion() {
     var currentQuestion = questionArr[questionIndex]
-   // for(var i=0; i<array.lenght; i++){
-    //     [i].style.background='none'
-    // }s
     questionSpot.textContent = currentQuestion.question
     for(var i=0; i<currentQuestion.responses.length; i++) {
         responseButtons[i].textContent = currentQuestion.responses[i]
