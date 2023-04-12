@@ -1,5 +1,29 @@
-var startButton=document.getElementById("start-button")
-var timeLeft=60
+var startButton = document.getElementById("start-button");
+
+var restartButton = document.getElementById("restart");
+
+var userScore = document.getElementById("user-score");
+
+var points = document.getElementById("score")
+
+var scoreContainer = document.querySelector(".score-container")
+
+var startPage = document.querySelector(".start-page")
+
+var timeDisplay =document.getElementById("time-display")
+
+var displayContainer = document.getElementById("display-container");
+
+var numberOfQuestions = document.querySelector(".number-of-question");
+
+var questionEl = document.getElementById("question-container");
+
+var questionSpot = document.getElementById("question-spot");
+
+var responseButtons = document.querySelectorAll(".response")
+
+var questionIndex = 0
+
 var questionArr=[
     {   question: "What does JS stand for?",
         responses: ["Jersey Shore", "John Sinclair", "John Sheriden", "JavaScript"], 
@@ -29,8 +53,50 @@ var questionArr=[
 ]
 
 
+function displayQuestion() {
+    var currentQuestion = questionArr[questionIndex]
+   // for(var i=0; i<array.lenght; i++){
+    //     [i].style.background='none'
+    // }s
+    questionSpot.textContent = currentQuestion.question
+    for(var i=0; i<currentQuestion.responses.length; i++) {
+        responseButtons[i].textContent = currentQuestion.responses[i]
+    }
+}
+
+function startCountdown(seconds) {
+    let counter = seconds;
+
+    const interval = setInterval(() => {
+        document.timeDisplay = counter
+        console.log(counter);
+        counter--;
+
+        if (counter , 0) {
+            clearInterval(interval);
+        }
+    }, 1000);
+}
+
+function nextQuestion(){
+    if (questionIndex < questionArr.length) {
+        displayQuestion();
+        questionIndex++;
+    }
+    else {
+        points.innerHTML=score + '/' + questionArr.length;
+        displayContainer.style.display = 'none';
+        scoreContainer.style.display = "block";
+    }
+}
+
+function restart() {
+    location.reload();
+}
 
 
 startButton.addEventListener("click", function(event) {
     console.log(event)
+    questionEl.style.display= "block";
+    nextQuestion();
 })

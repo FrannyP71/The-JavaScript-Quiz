@@ -12,16 +12,32 @@
     <div class="start-page">
         <button id="start-button">Start</button>
     </div>
+    <div class="next">
+        <button id="next">Next</button>
+    </div>
+
     <div id="display-container">
         <div class="header"></div>
-            <h3 class="number-of-count"><span id="number-of-questions">0</span> of 10 questions</h3>
+            <h3 class="number-of-count"><span class="number-of-questions">0</span> of 5 questions</h3>
         </div>
-        <h3 class="timer"><span id="time-left">60</span> seconds</h3>
-        <div id="container">
+        <div id="timer">
+            <div id="time-display">
+                00:00
+            </div> 
+        </div>
+        <div id="question-container">
             <!--the questions will be diplayed here-->
+            <h3 id="question-spot">question goes here</h3>
+            <div>
+                <button class="response"></button>
+                <button class="response"></button>
+                <button class="response"></button>
+                <button class="response"></button>
+            </div>
         </div>
-        <div class="score">
+        <div class="score-container hide">
             <h2 id="user-score">Score</h2>
+            <h2 id="score"></h2>
             <button id="restart">Restart</button>
             </div>
          
