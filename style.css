@@ -109,12 +109,18 @@
         width: 150px;
     }
 
+    .answer {
+        color: green;
+        border: green;
+    }
+
     .hide{
         display: none
     }
 
     #user-score {
-        
+        font-size: 20px;
+        color: rgb(207, 96, 96);        
     }
 
     

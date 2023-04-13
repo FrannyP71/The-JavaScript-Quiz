@@ -52,7 +52,6 @@ var questionArr=[
     //copy and paste questions
 ]
 
-
 function displayQuestion() {
     var currentQuestion = questionArr[questionIndex]
     questionSpot.textContent = currentQuestion.question
@@ -60,7 +59,7 @@ function displayQuestion() {
         responseButtons[i].textContent = currentQuestion.responses[i]
     }
 }
-
+    
 function startCountdown(seconds) {
     let counter = seconds;
 
@@ -73,6 +72,11 @@ function startCountdown(seconds) {
             clearInterval(interval);
         }
     }, 1000);
+}
+
+function selectAnswer(e) {
+    let answer = correct(true)
+    
 }
 
 function nextQuestion() {
