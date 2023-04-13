@@ -17,8 +17,10 @@
 
     .title{
       color: rgb(86, 86, 244);
-      font-size: 50 px;
+      font-size: xx-large;
       align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
     .start-page, .score-container {
@@ -47,6 +49,7 @@
         position: center;
         border-radius: 5px;
         border-style: none;
+        margin-top: 35%;
     }
 
     #display-container {
@@ -103,7 +106,7 @@
         font-size: 20px;
         margin: 5px 5px 5px 5px;
         height: 50px;
-        width: 100px;
+        width: 150px;
     }
 
     .hide{

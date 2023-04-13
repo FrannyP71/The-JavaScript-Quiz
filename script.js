@@ -4,13 +4,13 @@ var restartButton = document.getElementById("restart");
 
 var userScore = document.getElementById("user-score");
 
-var points = document.getElementById("score")
+var points = document.getElementById("score");
 
-var scoreContainer = document.querySelector(".score-container")
+var scoreContainer = document.querySelector(".score-container");
 
-var startPage = document.querySelector(".start-page")
+var startPage = document.querySelector(".start-page");
 
-var timeDisplay =document.getElementById("time-display")
+var timeDisplay = document.getElementById("time-display");
 
 var displayContainer = document.getElementById("display-container");
 
@@ -20,7 +20,7 @@ var questionEl = document.getElementById("question-container");
 
 var questionSpot = document.getElementById("question-spot");
 
-var responseButtons = document.querySelectorAll(".response")
+var responseButtons = document.querySelectorAll(".response");
 
 var questionIndex = 0
 
@@ -69,13 +69,13 @@ function startCountdown(seconds) {
         console.log(counter);
         counter--;
 
-        if (counter , 0) {
+        if (counter == 0) {
             clearInterval(interval);
         }
     }, 1000);
 }
 
-function nextQuestion(){
+function nextQuestion() {
     if (questionIndex < questionArr.length) {
         displayQuestion();
         questionIndex++;
@@ -94,7 +94,8 @@ function restart() {
 
 startButton.addEventListener("click", function(event) {
     console.log(event)
-    questionEl.style.display= "block";
+    questionEl.style.display = "block";
     startCountdown(60);
     nextQuestion();
 })
+
