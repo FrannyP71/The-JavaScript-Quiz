@@ -87,9 +87,9 @@ function nextQuestion() {
     }
 }
 
-function restart() {
+restartButton.addEventListener("click", function(restart) {
     location.reload();
-}
+})
 
 
 startButton.addEventListener("click", function(event) {
