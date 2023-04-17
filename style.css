@@ -24,15 +24,11 @@
     }
 
     .start-page, .score-container {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: 100%;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        margin: auto;       
+        align-items: center;      
     }
 
     button {
@@ -49,7 +45,7 @@
         position: center;
         border-radius: 5px;
         border-style: none;
-        margin-top: 35%;
+        margin: 50px
     }
 
     #display-container {
@@ -110,8 +106,12 @@
     }
 
     .answer {
-        color: green;
-        border: green;
+        background-color: rgb(127, 221, 127);
+        border: rgb(127, 221, 127);
+    }
+
+    .wrong {
+        background-color: rgb(238, 104, 104);
     }
 
     .hide{

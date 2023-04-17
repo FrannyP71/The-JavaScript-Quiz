@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>JavaScript Quiz</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='style.css'>
-   
+
 </head>
+
 <body>
     <div class="title">The JavaScript Quiz</div>
-    <div class="start-page">
-        <button id="start-button">Start/Next</button>
-    </div>    
+
     <div id="display-container">
         <div class="header"></div>
-            <h3 class="number-of-count"><span class="number-of-questions"></span> 5 questions</h3>
+        <h3 class="number-of-count"><span class="number-of-questions"></span> 5 questions</h3>
+    </div>
+    <div id="timer">
+        <div id="time-display">
+            00:00
         </div>
-        <div id="timer">
-            <div id="time-display">
-                00:00
-            </div> 
+    </div>
+    <div id="question-container">
+        <!--the questions will be diplayed here-->
+        <h3 id="question-spot">Questions</h3>
+        <div id="response-buttons">
+            <button class="response"></button>
+            <button class="response"></button>
+            <button class="response"></button>
+            <button class="response"></button>
         </div>
-        <div id="question-container">
-            <!--the questions will be diplayed here-->
-            <h3 id="question-spot">Questions</h3>
-            <div id="response-buttons">
-                <button class="response"></button>
-                <button class="response"></button>
-                <button class="response"></button>
-                <button class="response"></button>
-            </div>
-        </div>
-        <div class="score-container hide">
-            <h2 id="user-score">Score</h2>
-            <h2 id="score"></h2>
-            <button id="restart">Restart</button>
-            </div>
-         
-        <script src='script.js'></script>
+    </div>
+    <div class="score-container hide">
+        <h2 id="user-score">Score</h2>
+        <h2 id="score"></h2>
+        <button id="restart">Restart</button>
+    </div>
+    <div class="start-page">
+        <button id="start-button">Start/Next</button>
+    </div>
+
+    <script src='script.js'></script>
 </body>
+
 </html>

@@ -22,7 +22,11 @@ var questionSpot = document.getElementById("question-spot");
 
 var responseButtons = document.querySelectorAll(".response");
 
-var questionIndex = 0
+var buttonContainer = document.querySelector('#response-buttons');
+
+var questionIndex = -1
+
+var counter = 60
 
 var questionArr=[
     {   question: "What does JS stand for?",
@@ -55,13 +59,12 @@ var questionArr=[
 function displayQuestion() {
     var currentQuestion = questionArr[questionIndex]
     questionSpot.textContent = currentQuestion.question
-    for(var i=0; i<currentQuestion.responses.length; i++) {
+    for(var i=0; i < currentQuestion.responses.length; i++) {
         responseButtons[i].textContent = currentQuestion.responses[i]
     }
 }
     
-function startCountdown(seconds) {
-    let counter = seconds;
+function startCountdown() {
 
     const interval = setInterval(() => {
         timeDisplay.textContent = counter
@@ -74,20 +77,18 @@ function startCountdown(seconds) {
     }, 1000);
 }
 
-function selectAnswer(e) {
-    let answer = correct(true)
-    
-}
-
 function nextQuestion() {
-    if (questionIndex < questionArr.length) {
-        displayQuestion();
+    //If (condition) if conditions is true, run the code
+    if (questionIndex < questionArr.length -1) {
         questionIndex++;
+        displayQuestion();
+
     }
     else {
         points.innerHTML=score + '/' + questionArr.length;
         displayContainer.style.display = 'none';
         scoreContainer.style.display = "block";
+        questionEl.style.display = 'none'
     }
 }
 
@@ -99,7 +100,27 @@ restartButton.addEventListener("click", function(restart) {
 startButton.addEventListener("click", function(event) {
     console.log(event)
     questionEl.style.display = "block";
-    startCountdown(60);
+    startCountdown();
     nextQuestion();
 })
+
+buttonContainer.addEventListener('click', function(event) {
+    var userChoice = event.target.textContent
+    var correctAnswer = questionArr[questionIndex].answer
+    if (userChoice === correctAnswer){
+        console.log('Right')
+        event.target.classList.add('answer')
+        setTimeout(function () {
+            event.target.classList.remove('answer')
+        }, 150)
+    }else {
+        console.log('Wrong')
+        event.target.classList.add('wrong')
+        setTimeout(function() {
+            event.target.classList.remove('wrong')
+        }, 150)
+    }
+    nextQuestion()
+});
+
 
