@@ -21,6 +21,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+      margin: 40px;
     }
 
     .start-page, .score-container {
@@ -45,7 +46,7 @@
         position: center;
         border-radius: 5px;
         border-style: none;
-        margin: 50px
+        margin: 40px
     }
 
     #display-container {
@@ -87,6 +88,7 @@
         padding:50px;
         width: 75%;
         margin:0 auto;
+        margin-top: 25px;
         position: center;
         border-radius: 10px;
         
@@ -118,9 +120,16 @@
         display: none
     }
 
+    .score-container {
+        background-color: #fff;
+        width: 200px;
+        height: 100px;
+        margin-left: 50px;
+    }
+
     #user-score {
         font-size: 20px;
-        color: rgb(207, 96, 96);        
+        color: rgb(207, 96, 96); 
     }
 
     

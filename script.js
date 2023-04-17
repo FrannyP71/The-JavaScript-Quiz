@@ -26,11 +26,11 @@ var buttonContainer = document.querySelector('#response-buttons');
 
 var questionIndex = -1
 
-var counter = 60
+var counter = 30
 
 var questionArr=[
     {   question: "What does JS stand for?",
-        responses: ["Jersey Shore", "John Sinclair", "John Sheriden", "JavaScript"], 
+        responses: ["Jersey Shore", "JavaScript", "John Sheriden", "John Sinclair"], 
         answer: "JavaScript",
     },
 
@@ -71,7 +71,7 @@ function startCountdown() {
         console.log(counter);
         counter--;
 
-        if (counter == 0) {
+        if (counter === 0) {
             clearInterval(interval);
         }
     }, 1000);
@@ -102,6 +102,7 @@ startButton.addEventListener("click", function(event) {
     questionEl.style.display = "block";
     startCountdown();
     nextQuestion();
+    startButton.style.display ='none'
 })
 
 buttonContainer.addEventListener('click', function(event) {
@@ -121,6 +122,12 @@ buttonContainer.addEventListener('click', function(event) {
         }, 150)
     }
     nextQuestion()
-});
+})
+
+function endGame( ) {
+    if (counter === 0) {
+    buttonContainer.disabled();
+    }
+}
 
 
