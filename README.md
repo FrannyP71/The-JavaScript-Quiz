@@ -7,5 +7,6 @@ When you press start you are presented with questions. When a question is answer
 
 ![challenge-3-pw-gen](./javascript-quiz.png)
 
-https://github.com/FrannyP71/The-JavaScript-Quiz.git
+ https://frannyp71.github.io/The-JavaScript-Quiz/
+ 
 
