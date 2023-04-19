@@ -2,9 +2,13 @@ var startButton = document.getElementById("start-button");
 
 var restartButton = document.getElementById("restart");
 
+var submitButton = document.getElementById("submit");
+
 var userScore = document.getElementById("user-score");
 
 var points = document.getElementById("score");
+
+var pointsCounter = 0
 
 var scoreContainer = document.querySelector(".score-container");
 
@@ -27,6 +31,8 @@ var buttonContainer = document.querySelector('#response-buttons');
 var questionIndex = -1
 
 var counter = 30
+
+var interval;
 
 var questionArr=[
     {   question: "What does JS stand for?",
@@ -63,19 +69,29 @@ function displayQuestion() {
         responseButtons[i].textContent = currentQuestion.responses[i]
     }
 }
-    
-function startCountdown() {
 
-    const interval = setInterval(() => {
-        timeDisplay.textContent = counter
-        console.log(counter);
-        counter--;
+//(function(){
+    // var sec = 60;
+    function startCountdown() {
 
-        if (counter === 0) {
+         interval = setInterval(() => {
+            timeDisplay.textContent = counter
+            console.log(counter);
+            counter--;
+
+            if (counter === -1) {
             clearInterval(interval);
-        }
-    }, 1000);
-}
+            endQuiz()
+            }
+        }, 1000);
+    }
+
+    // document.get.addEventListener('click', function(){
+    //     sec = -5;
+    //     document.getElementById('timeDisplay').innerHTML='00:' + sec;
+    // });
+//})();
+
 
 function nextQuestion() {
     //If (condition) if conditions is true, run the code
@@ -85,12 +101,12 @@ function nextQuestion() {
 
     }
     else {
-        points.innerHTML=score + '/' + questionArr.length;
-        displayContainer.style.display = 'none';
-        scoreContainer.style.display = "block";
-        questionEl.style.display = 'none'
+        endQuiz()
+        clearInterval(interval)
     }
 }
+
+
 
 restartButton.addEventListener("click", function(restart) {
     location.reload();
@@ -114,20 +130,37 @@ buttonContainer.addEventListener('click', function(event) {
         setTimeout(function () {
             event.target.classList.remove('answer')
         }, 150)
+        pointsCounter +=20
     }else {
-        console.log('Wrong')
+        // If they choose the wrong answer
         event.target.classList.add('wrong')
         setTimeout(function() {
             event.target.classList.remove('wrong')
         }, 150)
+        counter -=5
     }
     nextQuestion()
 })
 
-function endGame( ) {
-    if (counter === 0) {
-    buttonContainer.disabled();
-    }
+function endQuiz(){
+    console.log('Quiz Ended')
+    displayContainer.style.display = 'none';
+    scoreContainer.style.display = "block";
+    questionEl.style.display = 'none'
+    points.textContent = pointsCounter
+    localStorage.setItem('userScore', pointsCounter);
 }
+
+function getLocalStorage(){
+    var previousScore = localStorage.getItem('userScore')
+    console.log(previousScore)
+    document.querySelector('.highscore').textContent = 'Previous Score was ' + previousScore 
+} 
+getLocalStorage()
+
+//submitButton.addEventListener("click", function(event) {
+//    console.log(event)
+//})
+
 
 
