@@ -49,6 +49,10 @@
         margin: 40px
     }
 
+    #restart {
+        margin-top: 30px;
+    }
+
     #display-container {
         background-color: white;
         padding:50px;
